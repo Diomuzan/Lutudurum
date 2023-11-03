@@ -1,0 +1,15 @@
+C:\Projects\Lutudurum\bin\Debug\net8.0\Lutudurum.exe
+C:\Projects\Lutudurum\bin\Debug\net8.0\Lutudurum.deps.json
+C:\Projects\Lutudurum\bin\Debug\net8.0\Lutudurum.runtimeconfig.json
+C:\Projects\Lutudurum\bin\Debug\net8.0\Lutudurum.dll
+C:\Projects\Lutudurum\bin\Debug\net8.0\Lutudurum.pdb
+C:\Projects\Lutudurum\obj\Debug\net8.0\Lutudurum.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projects\Lutudurum\obj\Debug\net8.0\Lutudurum.AssemblyInfoInputs.cache
+C:\Projects\Lutudurum\obj\Debug\net8.0\Lutudurum.AssemblyInfo.cs
+C:\Projects\Lutudurum\obj\Debug\net8.0\Lutudurum.csproj.CoreCompileInputs.cache
+C:\Projects\Lutudurum\obj\Debug\net8.0\Lutudurum.sourcelink.json
+C:\Projects\Lutudurum\obj\Debug\net8.0\Lutudurum.dll
+C:\Projects\Lutudurum\obj\Debug\net8.0\refint\Lutudurum.dll
+C:\Projects\Lutudurum\obj\Debug\net8.0\Lutudurum.pdb
+C:\Projects\Lutudurum\obj\Debug\net8.0\Lutudurum.genruntimeconfig.cache
+C:\Projects\Lutudurum\obj\Debug\net8.0\ref\Lutudurum.dll
