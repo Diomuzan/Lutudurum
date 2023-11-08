@@ -15,7 +15,7 @@ class Program {
             } catch (ArgumentOutOfRangeException ex) {
                 Console.WriteLine("An error has occurred.");
                 Console.WriteLine(ex.Message);
-                Console.WriteLine($"The upper bound must be greater than {lowerBound}");
+                Console.WriteLine($"The upper bound must be greater than the lower bound.");
                 Console.Write("Enter a new upper bound (or enter 'Exit' to quit): ");
                 string userResponse = Console.ReadLine();
                 if (userResponse.ToLower() == "exit") {
@@ -24,8 +24,7 @@ class Program {
                     upperBound = int.Parse(userResponse);
                 }
             }
-        }
-        while (!exit);
+        }  while (!exit);
         Console.WriteLine("\n");
     }
     static decimal AverageOfEvenNumbers(int lowerBound, int upperBound) {
@@ -44,49 +43,32 @@ class Program {
         average = (decimal)sum / count;
         return average;
     }
-    static string Workflow1(string[][] userEnteredValues) {
-        string operationStatusMessage = "good";
-        string processStatusMessage = "";
+    static void Workflow1(string[][] userEnteredValues) {
         foreach (string[] userEntries in userEnteredValues) {
-            processStatusMessage = Process1(userEntries);
-            if (processStatusMessage == "process complete") {
-                Console.WriteLine("'Process1' completed successfully.");
-                Console.WriteLine();
-            } else {
-                Console.WriteLine("'Process1' encountered an issue, process aborted.");
-                Console.WriteLine(processStatusMessage);
-                Console.WriteLine();
-                operationStatusMessage = processStatusMessage;
-            }
+            Process1(userEntries);
+            Console.WriteLine("'Process1' completed successfully.");
+            Console.WriteLine();
         }
-        if (operationStatusMessage == "good") {
-            operationStatusMessage = "operating procedure complete";
-        }
-        return operationStatusMessage;
     }
-    static string Process1(string[] userEntries) {
-        string processStatus = "clean";
-        string returnMessage = "";
+    static void Process1(string[] userEntries) {
         int valueEntered;
         foreach (string userValue in userEntries) {
             bool integerFormat = int.TryParse(userValue, out valueEntered);
             if (integerFormat == true) {
-                if (valueEntered != 0) {
-                    checked {
-                        int calculatedValue = 4 / valueEntered;
+                if (valueEntered != 0)
+                {
+                    int calculatedValue = 0;
+                    try {
+                        calculatedValue = 4 / valueEntered;
+                    } catch (DivideByZeroException) {
+                        throw new DivideByZeroException("Invalid data. User input values must be non-zero values.");
                     }
                 } else {
-                    returnMessage = "Invalid data. User input values must be non-zero values.";
-                    processStatus = "error";
+                    throw new DivideByZeroException("Invalid data. User input values must be non-zero values.");
                 }
             } else {
-                returnMessage = "Invalid data. User input values must be valid integers.";
-                processStatus = "error";
+                throw new FormatException("Invalid data. User input values must be valid integers.");
             }
         }
-        if (processStatus == "clean") {
-            returnMessage = "process complete";
-        }
-        return returnMessage;
     }
 }
